@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="form1.css">
+    </head>
+    <body>
+        <div class="form">
+            <h1>Create Your Account</h1>
+            <form target="_blank" name="myform" onsubmit="return myFunction()">
+                <input class="Username common" required type="text" placeholder="Username" name="Username"><br>
+                <input class="Email common" required type="email" placeholder="Email" name="Email"><br>
+                <input class="Contact common" required type="text" name="Contact" placeholder="Contact"><br>
+                <input class="Password common" required type="password" name="Password" id="Password" placeholder="Create Password"><br>
+                <input class="C_password common" required type="password" name="C_password" id="C_password" placeholder="Confirm Password"><br>
+                <input type="submit" value="Register" class="register">        
+            </form>
+    </div>
+        <script>
+            function myFunction(){
+                var Username=document.myform.Username.value;
+                var Email=document.myform.Email.value;
+                var Contact=document.myform.Contact.value;
+                var Create_Password=document.myform.Password.value;
+                var C_password=document.myform.C_password.value;
+                if(isNaN(Contact)){
+                    alert("Enter numbers only");
+                    return false;
+                }
+                else if(Create_Password.length<6)
+                {
+                    alert("Password must be atleast 6 characters long");
+                    return false;
+                }
+                else if(Create_Password!=C_password)
+                {
+                    alert("Password must be same");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
